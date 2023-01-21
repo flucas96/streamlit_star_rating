@@ -2,6 +2,9 @@ import streamlit  as st
 
 from streamlit_star_rating import st_star_rating
 
+st.set_page_config(layout="wide")
+
+
 with st.sidebar:
 
     label = st.text_input("Label","How many stars?")
