@@ -1,3 +1,13 @@
+Metadata-Version: 2.1
+Name: st-star-rating
+Version: 0.0.3
+Summary: Streamlit Component for Star Ratings
+Home-page: 
+Author: 
+Author-email: 
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
 Streamlit Star Rating Component
 ===
 
@@ -35,8 +45,7 @@ defaultValue: Amount of preselected Stars
     st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", read_only = True )
 
 
-## Emojis instead of Stars
-Note: The maximum value is limited to 5 when using emojis instead of stars.
+## Emotiocons instead of Stars
 
     st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", emoticons = True )
 
