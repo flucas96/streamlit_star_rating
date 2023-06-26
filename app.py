@@ -38,17 +38,9 @@ with st.sidebar:
         css_custom = "" 
 
 
-
-stars = st_star_rating(label, amount_of_stars, default_value, size, emoticons, read_only, dark_theme, resetButton=reset_btn, resetLabel=reset_label,customCSS=css_custom)
-st.write(stars)
-
-
-
-st.code("""
-import streamlit  as st
-from streamlit_star_rating import st_star_rating
+with st.echo(): 
+    stars = st_star_rating(label, amount_of_stars, default_value, size, emoticons, read_only, dark_theme, resetButton=reset_btn, resetLabel=reset_label,customCSS=css_custom)
+    st.write(stars)
 
 
-stars = st_star_rating(label, amount_of_stars, default_value, size, emoticons, read_only, dark_theme)
-st.write(stars)
-""")
+
