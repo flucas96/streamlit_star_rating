@@ -40,3 +40,19 @@ Note: The maximum value is limited to 5 when using emojis instead of stars.
 
     st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", emoticons = True )
 
+
+## Update 2023-06
+
+
+It is possible to add a reset button to the component. The reset button will reset the rating to the default value.
+
+    st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", reset_button = True )
+
+Furthermore, the label of the button can be determined by setting the resetLabel parameter. Note: HTML tags will be interpreted.
+
+    st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", reset_button = True, resetLabel = "Reset" )
+
+Additionally it is possible to provide custom CSS to the component. The CSS can be provided as string and will be rendered in `<style>` tags.
+
+    st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", reset_button = True, resetLabel = "Reset", customCSS = "div {background-color: red;}" )
+

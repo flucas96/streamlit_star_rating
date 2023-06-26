@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: st-star-rating
-Version: 0.0.3
+Version: 0.0.4
 Summary: Streamlit Component for Star Ratings
 Home-page: 
 Author: 
@@ -45,7 +45,24 @@ defaultValue: Amount of preselected Stars
     st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", read_only = True )
 
 
-## Emotiocons instead of Stars
+## Emojis instead of Stars
+Note: The maximum value is limited to 5 when using emojis instead of stars.
 
     st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", emoticons = True )
+
+
+## Update 2023-06
+
+
+It is possible to add a reset button to the component. The reset button will reset the rating to the default value.
+
+    st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", reset_button = True )
+
+Furthermore, the label of the button can be determined by setting the resetLabel parameter. Note: HTML tags will be interpreted.
+
+    st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", reset_button = True, resetLabel = "Reset" )
+
+Additionally it is possible to provide custom CSS to the component. The CSS can be provided as string and will be rendered in `<style>` tags.
+
+    st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", reset_button = True, resetLabel = "Reset", customCSS = "div {background-color: red;}" )
 

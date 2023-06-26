@@ -15,8 +15,31 @@ with st.sidebar:
     read_only = st.checkbox("Read Only",value=False)
     dark_theme = st.checkbox("Dark Theme",value=False)
 
+    st.divider()
+    st.caption("Update - 2023-06-23")
+    reset_btn = st.checkbox("Reset Button",value=False)
+    if reset_btn:
+        reset_label = st.text_input("Reset Label","<b>Reset Rating</b>")
+        st.caption("HTML Styling is allowed")
+    else:
+        reset_label = "Reset Rating"
 
-stars = st_star_rating(label, amount_of_stars, default_value, size, emoticons, read_only, dark_theme)
+    enable_css = st.checkbox("Enable Custom CSS",value=False)
+
+    custom_css = st.text_area("Custom CSS","""[data-baseweb="button"] {
+    /* Your CSS styles go here. For example: */
+    color: red;
+    background-color: black;
+}""", disabled=not enable_css)
+    
+    if enable_css:
+        css_custom = custom_css
+    else:
+        css_custom = "" 
+
+
+
+stars = st_star_rating(label, amount_of_stars, default_value, size, emoticons, read_only, dark_theme, resetButton=reset_btn, resetLabel=reset_label,customCSS=css_custom)
 st.write(stars)
 
 
