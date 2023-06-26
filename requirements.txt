@@ -1,2 +1,2 @@
 streamlit
-st-star-rating
+st-star-rating==0.0.5
