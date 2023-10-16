@@ -56,3 +56,7 @@ Additionally it is possible to provide custom CSS to the component. The CSS can 
 
     st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", reset_button = True, resetLabel = "Reset", customCSS = "div {background-color: red;}" )
 
+
+## Update 2023-10
+
+Added an on_click parameter. Using this parameter enables user to execute a python function that gets executed once the value component gets clicked. 

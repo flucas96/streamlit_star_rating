@@ -6,7 +6,7 @@ with open('README.md') as f:
 
 setuptools.setup(
     name="st_star_rating",
-    version="0.0.5",
+    version="0.0.6",
     author="",
     author_email="",
     description="Streamlit Component for Star Ratings",
