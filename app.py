@@ -37,9 +37,16 @@ with st.sidebar:
     else:
         css_custom = "" 
 
+    st.divider()
+    st.caption("Update - 2023-10-16")
+    st.write("Added the posibility to add an 'on_click' function. The first parameter of the function is the return value of the component. Additional parameters can be passed using the 'on_click_kwargs' parameter.")
 
+
+def function_to_run_on_click(value):
+    st.write(f"**{value}** stars!")
 with st.echo(): 
-    stars = st_star_rating(label, amount_of_stars, default_value, size, emoticons, read_only, dark_theme, resetButton=reset_btn, resetLabel=reset_label,customCSS=css_custom)
+    stars = st_star_rating(label, amount_of_stars, default_value, size, emoticons, read_only, dark_theme, resetButton=reset_btn, resetLabel=reset_label,
+                           customCSS=css_custom, on_click=function_to_run_on_click)
     st.write(stars)
 
 

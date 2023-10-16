@@ -1,6 +1,7 @@
 import streamlit.components.v1 as components
 import os
-import warnings 
+import logging 
+import streamlit as st
 
 _RELEASE = True
 
@@ -26,7 +27,7 @@ else:
 
 
 def st_star_rating(label: str, maxValue: int, defaultValue: int, size: int = 40, emoticons: bool = False, read_only: bool = False, dark_theme: bool = False, key = None,
-                   resetButton: bool = False,resetLabel:str = "Reset Rating",customCSS:str="") -> int:
+                   resetButton: bool = False,resetLabel:str = "Reset Rating",customCSS:str="", on_click = None, on_click_kwargs: dict = {}) -> int:
     
     """
     Component to display a star rating widget.
@@ -57,15 +58,36 @@ def st_star_rating(label: str, maxValue: int, defaultValue: int, size: int = 40,
     customCSS : str, optional
         Custom CSS to apply to the component. The default is "".
 
+    on_click : function, optional
+
     """
+
+    if key is None:
+        if 'first_render' not in st.session_state:
+            st.session_state.first_render = True
+            first_render = True
+        else:
+            first_render = False
+    else:
+        if f"first_render_{key}" not in st.session_state:
+            st.session_state[f"first_render_{key}"] = True
+            first_render = True
+        else:
+            first_render = False
 
     if emoticons:
         if maxValue > 5:
             maxValue = 5
-            warnings.log("Max value cannot is always 5 when using emoticons. Setting max value to 5")
+            logging.warning("Max value cannot is always 5 when using emoticons. Setting max value to 5")
 
     component_value = _component_func(label=label,maxValue=maxValue,defaultValue=defaultValue, emoticons = emoticons, read_only=read_only, dark_theme = dark_theme,
     size=size,key=key,default=defaultValue,resetButton=resetButton,resetLabel=resetLabel, customCSS=customCSS,)
+
+    #dont run the on click function on first render
+
+    if on_click and not first_render:
+        on_click(component_value, **on_click_kwargs)
+
 
     return component_value
 
