@@ -1,4 +1,6 @@
 Streamlit Star Rating Component
+
+<a href="https://buymeacoffee.com/flucas" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 ===
 
 This streamlit component adds a star selector to Streamlit Apps. 
