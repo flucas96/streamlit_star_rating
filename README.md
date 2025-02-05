@@ -1,4 +1,4 @@
-Streamlit Star Rating Component
+# Streamlit Star Rating Component
 
 
 
